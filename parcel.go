@@ -47,8 +47,9 @@ func (s ParcelStore) Get(number int) (Parcel, error) {
 		&p.Address,
 		&p.CreatedAt,
 	)
+
 	if err != nil {
-		return p, err
+		return Parcel{}, err
 	}
 
 	return p, nil
